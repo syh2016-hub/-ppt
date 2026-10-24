@@ -1,0 +1,49 @@
+启明 PPT · 交付清单
+============================
+版本：1.5.0
+
+【可执行软件】
+dist/启明PPT.exe               单文件 Windows 程序（约 70 MB）
+dist/示例演示.pptx             12 页示例，含原生动画，可用 PowerPoint 打开
+dist/先看这里.txt              第一次使用请先看
+dist/README.md                 完整说明
+dist/docs/screenshots/         界面截图
+
+【源代码】
+启明PPT-源代码.zip             前端 / 后端 / 测试 / 打包配置
+backend/                       后端代码（Flask、SQLite、AI、PPTX）
+frontend/                      前端代码（HTML/CSS/JS，无 CDN）
+tests/                         自动化测试
+
+【声音与朗读】
+11 种神经网络声音，可试听；含温柔女声、成人男声、中英文童声。
+可从文档或课文图片（Windows OCR）识别课文，生成朗读页；中文/英文课文自动匹配声音。
+
+【长演示】
+AI 大纲支持 6—50 页；20 页以上自动拆分更多章节，40 页以上建议 6 个章节。
+
+【参考素材】
+支持图片、PDF、Word、PPT、Excel、TXT、Markdown、CSV 等；
+文档自动提取正文交给 AI，图片可提取配色或用作封面。
+一次最多 8 个，单个不超过 20 MB；旧版 Office 格式需 LibreOffice。
+
+【账号】
+注册邀请码：songyonghao2016（区分大小写，必须完全一致）
+可选邮箱验证码：管理员配置 SMTP 后可开启（邀请码 + 邮箱验证码双重校验）
+管理员账号：admin
+管理员初始密码：Admin@2016
+管理后台：启动后访问 /admin，或登录管理员后点左下角「管理后台」
+首次登录后请修改管理员密码；修改后初始密码文件会自动删除。
+
+【运行要求】
+Windows 10/11 x64
+Microsoft Edge WebView2 Runtime（通常系统已带）
+PDF 导出需要 LibreOffice（未安装时仍可下载 PPTX）
+TTS 旁白使用 Windows 内置中文语音
+邮箱验证码需要管理员配置可用的 SMTP 发件邮箱
+参考素材的旧版 Office 解析需要 LibreOffice（未安装时其他格式仍可用）
+
+【验证】
+python -m unittest discover -s tests -v
+12 项测试通过（含媒体自动播放与图片 OCR 朗读）；打包后的 exe 已实测生成 50 页、每页动画 / 转场的 PPTX，
+并实测完成「邀请码 + 邮箱验证码」注册、参考文档解析、参考图封面流程。
